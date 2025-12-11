@@ -1,14 +1,39 @@
 @import "tailwindcss";
 
+@theme{
+  --color-red:#f59090f0;
+  --color-btn:#700040;
+  --color-hvr:#6B053F;
+}
+
+@layer base{
+  h1{
+    font-size:2.5em;
+  }
+}
+
+
 #root{
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  color: #e4e4e4f0;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 2em;
 }
+
 body{
-  background: black;
+  background-image: linear-gradient(to right, #060605, #2c0715);
+  @apply text-red text-[min(3vw,1em)]
 }
+
+:Link{
+  padding:10px;
+  @apply text-[min(3vw,1em)]
+}
+
+.icon-size{
+  @apply h-4 w-4 m-0.5 md:h-5 md:w-5
+}
+
+.tab-trigger{
+  @apply hover:text-hvr data-[state=active]:text-gray-200 data-[state=active]:bg-btn rounded p-3
+}
+
+
+
